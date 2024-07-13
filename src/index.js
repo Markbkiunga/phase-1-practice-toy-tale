@@ -49,7 +49,6 @@ window.addEventListener('load', () => {
 
 //Adds a New Toy
 let form = document.querySelector('form');
-console.log(form);
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   fetch('http://localhost:3000/toys', {
@@ -64,4 +63,25 @@ form.addEventListener('submit', (event) => {
       likes: 0,
     }),
   });
+});
+
+//Increase a toy'a likes
+let likeButtons = document.getElementsByClassName('like-btn');
+for (let i = 0; i < likeButtons.length; i++) {
+  console.log(likeButtons[i]);
+}
+//Patch code
+likeButtons.addEventListener('click', () => {
+  let newNumberOfLikes = toy.likes++;
+  fetch(`http://localhost:3000/toys/${likeButtonid}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      likes: newNumberOfLikes,
+    }),
+  });
+  p.textContent = newNumberOfLikes;
 });
