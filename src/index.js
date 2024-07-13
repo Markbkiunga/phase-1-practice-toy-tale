@@ -21,7 +21,6 @@ window.addEventListener('load', () => {
     .then((response) => response.json())
     .then((data) => {
       for (let toy of data) {
-        console.log(toy);
         let cardContainer = document.createElement('div');
         cardContainer.classList.add('card');
 
@@ -46,4 +45,23 @@ window.addEventListener('load', () => {
         toysContainer.appendChild(cardContainer);
       }
     });
+});
+
+//Adds a New Toy
+let form = document.querySelector('form');
+console.log(form);
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  fetch('http://localhost:3000/toys', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      name: event.target.name.value,
+      image: event.target.image.value,
+      likes: 0,
+    }),
+  });
 });

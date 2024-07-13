@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": 1
+    },
+    {
+      "id": "531c",
+      "name": "Stinky Pete",
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRwOLuhwc4xC7l2jATOdzjMLhQGSUiPazGsXqoOfgcA3Z74Jnri3mHV48T3xQvgVwGEZca7s7CCno8GOkQNa5mIgLgt_gVfbpHN5JMQXA",
+      "likes": 0
     }
   ]
 }
